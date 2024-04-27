@@ -8,7 +8,7 @@ Le dossier source et son contenu seront copie dans le dossier destination de man
 ## Utilisation (version executable)
 1. Telecharger le projet en cliquant sur le bouton vert "Code" puis "Download ZIP"
 2. Extraire le contenu du fichier ZIP
-3. Aller dans le dossier "dist" puis executer le fichier "main.exe"
+3. Aller dans le dossier "dirCloner", "dist" puis executer le fichier "[main.exe](dirCloner/dist)"
     * Lors de la premiere execution, un fichier "config.ini" sera cree.
 4. Modifier le fichier "config.ini" pour y ajouter les chemins du dossiers a cloner et du dossier de destination. ("source" et "destination")
 5. Relancer le fichier "main.exe"
