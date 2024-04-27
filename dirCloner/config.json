@@ -1,0 +1,14 @@
+{
+    "1": {
+        "source": "C:/Users/Laserie/curseforge/minecraft/Instances/Minecraft Evolution/mods", 
+        "destination": "C:/Users/Laserie/AppData/Roaming/.minecraft/versions/Create_/mods"
+        },
+    "2": {
+        "source": "C:/Users/Laserie/curseforge/minecraft/Instances/Minecraft Evolution/resourcepacks", 
+        "destination": "C:/Users/Laserie/AppData/Roaming/.minecraft/versions/Create_/mods"
+        },
+    "3": {
+        "source": "C:/Users/Laserie/curseforge/minecraft/Instances/Minecraft Evolution/shaderpacks", 
+        "destination": "C:/Users/Laserie/AppData/Roaming/.minecraft/versions/Create_/shaderpacks"
+        }
+        }

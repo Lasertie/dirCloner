@@ -2,7 +2,7 @@ import os
 import shutil
 import schedule
 import time
-import configparser
+import json
 
 def synchroniser_dossiers(dossier_source, dossier_destination):
     # Vérifier si les dossiers existent
@@ -41,32 +41,30 @@ def synchroniser_dossiers(dossier_source, dossier_destination):
 
 # Dossiers à synchroniser
 def check_config_file():
-    config_file = 'config.ini'
+    config_file = 'config.json'
     
     if not os.path.exists(config_file):
-        # Create config.ini file
+        # Create config.json file
         with open(config_file, 'w') as file:
-            file.write("[Settings]\n")
-            file.write("source = /path/to/source\n")
-            file.write("destination = /path/to/destination\n")
-        print("config.ini file created.")
+            json.dump({"1": {"source": "/path/to/source", "destination": "/path/to/destination"}}, file)
+        print("config.json file created.")
     
-    # Read config.ini file
-    config = configparser.ConfigParser()
-    config.read(config_file)
+    # Read config.json file
+    with open(config_file, 'r') as file:
+        config = json.load(file)
     
     # Assign values to variables
-    dossier_source = config.get('Settings', 'source')
-    dossier_destination = config.get('Settings', 'destination')
+    dossiers_source_destination = [(item['source'], item['destination']) for item in config.values()]
     
-    return dossier_source, dossier_destination
+    return dossiers_source_destination
 
 # Call the function to get the values
-dossier_source, dossier_destination = check_config_file()
-synchroniser_dossiers(dossier_source, dossier_destination)
+dossiers_source_destination = check_config_file()
 
-# Planifier l'exécution de la fonction toutes les heures
-schedule.every(5).seconds.do(synchroniser_dossiers, dossier_source, dossier_destination)
+for dossier_source, dossier_destination in dossiers_source_destination:
+    synchroniser_dossiers(dossier_source, dossier_destination)
+    # Planifier l'exécution de la fonction toutes les heures
+    schedule.every(10).seconds.do(synchroniser_dossiers, dossier_source, dossier_destination)
 
 # Boucle infinie pour exécuter les tâches planifiées
 while True:
