@@ -6,12 +6,9 @@ Un petit script python pour cloner un répertoire et son contenu de maniere recu
 Le dossier source et son contenu seront copie dans le dossier destination de maniere recursive en __**supprimant**__ les fichiers existants dans le dossier destination.
 
 ## Utilisation (version executable)
-1. Telecharger le projet en cliquant sur le bouton vert "Code" puis "Download ZIP"
+1. Telecharger le projet en selectionnant la "release" la plus recente dans la section "Releases"
 2. Extraire le contenu du fichier ZIP
-3. Aller dans le dossier "dirCloner", "dist" puis executer le fichier "[main.exe](dirCloner/dist)"
-    * Lors de la premiere execution, un fichier "config.ini" sera cree.
-4. Modifier le fichier "config.ini" pour y ajouter les chemins du dossiers a cloner et du dossier de destination. ("source" et "destination")
-5. Relancer le fichier "main.exe"
+
 
 ## Utilisation (version script python)
 1. Telecharger le projet en cliquant sur le bouton vert "Code" puis "Download ZIP"
